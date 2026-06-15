@@ -510,5 +510,27 @@ Already in landscape!
 Loading Screen Exit....
 ...scan photo: if_sd.
 ...scan photo end.
-
-
+desktopManager: signalApp(8)
+desktopManager: signalApp(): bundle_pid=668, title_pid=0, title_loc=-
+===================Auto Power Off===================
+Send SIGTERM to Bundle (pid=668,pgid=668)...
+>>> appswitch: received SIGTERM (15)
+>>> appswitch: send SIGTERM to process group 844...
+>>> appswitch: exit by SIGTERM
+received signal: 15
+wait_pro[  571.140000] [SPEAKER 27]
+cesses_terminate(844) -- finish
+sighandler_temp_set_shutter_sfx_vol(58)
+desktopManager: [  571.510000] [SPEAKER 27]
+AUTO POWER OFF (AUTODIM_MODE=0)!!!
+desktopManager: say Goodbye!
+desktopManager: send SIGTERM to dlsd (pid=736)...
+QT->dlsd.c:sig_exit:879: SIGINT=2, SIGTERM=15, signo=15
+send_command(): cmd=3, dlm->cmd=0, dlm=0xeb3c0, dlm.mtx=0xeb450, enter
+send_command(): cmd=3, dlm->cmd=0, dlm=0xeb1a8, dlm.mtx=0xeb238, enter
+24000Hz 16-bit 1-ch: desktopManager: dlsd (pid=736) exit gracefully
+POWER OFF
+POWER OF[  574.320000] [SPEAKER 0]
+F: turn off backlight
+POWER OFF: set audio volume to 0
+POWER OFF: wait until
