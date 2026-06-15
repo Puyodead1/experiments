@@ -1,0 +1,514 @@
+iROM v3 Entry A400-S160 MHz
+
+SPI Boot...(ID: 0x00) Fail
+Nand Boot...NF_NON_SHARE->Fail
+SDC/eMMC Boot...cmd SD_STATUS = 0x304
+cmd SD_STATUS = 0x304
+BootWell BtHdr ID:0
+cmd SD_STATUS = 0x1304
+cmd SD_STATUS = 0x1304
+0x92004000 = 0x00000952 
+0x92004008 = 0x08000010 
+0x9200400C = 0x0000030D 
+0x92004010 = 0x080B1833 
+0x92004014 = 0x4D832000 
+0x9200401C = 0x04080432 
+0x92004024 = 0x00660044 
+0x92004028 = 0x28282F2F 
+0x92005010 = 0x00000403 
+delay:512 Loop ...Finished
+0x90005004 = 0xEC722E83 
+0x9000505C = 0x073232B4 
+0x90005104 = 0x1F800003 
+0x920050A0 = 0x00000098 
+0x93007004 = 0x41993A18 
+0x93007044 = 0x0500012D 
+0x9300E2B8 = 0x002E0200 
+0x9301F020 = 0x00000C02 
+0x9301F02C = 0x00000003 
+0x9301F038 = 0x00000FFF 
+delay:1 ms ...Finished
+BootWell BtLdr ID:0
+
+
+VERSION2013
+###### eMMC_BL1 (Apr 10 2013 17:08:17) ######
+pBoardVersion(0xB1007F78) = 0xB4B4B4B4, pBootFlag(0xB1007F7C) = 0xA55A7887
+###### sd card 1 no insert, or init failed! ######
+Set SD0 Clock: 10  MHz
+###### sd card 0 passed! ######
+version: 1, 3, 5, 0
+Wait CEVA reset ready
+----CEVA L1 initial----
+Load FastBin, part num:5, start:34049(sector), size:60(sector), 
+Load FastImageHeader, part num:15, start:63901, size:1, (sector)
+FastBoot Image address(0xF99D)
+Set FastBootTag(0xB200FF00)=0x54534146
+LD: part_num=1, run_addr=0x00100000, start=257(sector), size=512(sector)
+Jump to eMMC_LD Code, Addr=0x00100000
+
+
+
+
+###### eMMC_LD VERSION: (Jun 14 2013 09:13:31) ######
+pBoardVersion(0xB1007F78) = 0xB4B4B4B4, pBootFlag(0xB1007F7C) = 0xA55A7887
+voltage=06.10
+Set SDC Clock: 10  MHz
+DISPLAY BUFFER = 0x07E00000, (kernel)
+voltage=06.92
+set PWM duty = 0
+rtc (0x00) = 5
+rtc (0x02) = A3
+get rtc alarm second value = 0
+alarm value false, set value = 32
+voltage=06.91
+logo: start=34201, size=2208 (sector), buffer=0x07E80000
+set PWM duty = 75
+bright:75
+audio: start=36409, size=864 (sector), buffer=0x07F94000
+voltage=06.80
+interval=45, frame=22, clk_div=1, fps=41, ms_pf=48
+audio_start_num=8
+Earphone remove
+volume:6+0
+voltage=06.78
+send i2c dummy clk
+*0x90005144 = 0x00000001
+*0x90005080 = 0x00C0A22A
+*0x9000A024 = 0xFFFFFFD7
+*0x90005110 = 0x3FEB0000
+*0x90005118 = 0x3FEB00FF
+*0x9000511c = 0x03EB0000
+*0x90005114 = 0x00030000
+jump to fast bin, addr = 0xB2000000
+
+
+<<<FastBin start>>>
+[   17.870000] [snapshot_sd] wait for TFT0 v-blank...done!  enable clock.
+[   17.870000] [snapshot_sd] enable TFT1 clock.
+[   17.870000] GPL32900 system timer init, PCLK(arm_apb)[90000000]Prescaler[89]LDR[10000]
+[   17.870000] gp_tp driver resume(0)
+[   17.870000] resume:gp_sdcard_cardinit
+[   17.870000] ### eMMC 4-bit high speed mode
+[   17.870000] ### eMMC speed = 0x190 (40 MHz)
+[   17.870000] Restarting tasks ... done.
+System_F[   17.970000] >>> ceva_clock_enable(1)
+ork("sna[   17.970000] === CEVA CLOCK REGS ===
+pshot_ut[   17.970000] scuaReg->scuaPeriClkEn2 = 22000003
+il.x") r[   17.980000] scucReg->scucPeriClkEn  = 0704B894
+eturns 0[   17.990000] scucReg->scucCevaCntEn  = 00000007
+
+[   17.990000] >>> ceva_clock_enable(0)
+[   17.990000] === CEVA CLOCK REGS ===
+[   18.000000] scuaReg->scuaPeriClkEn2 = 22000001
+[   18.000000] scucReg->scucPeriClkEn  = 0104B890
+[   18.010000] scucReg->scucCevaCntEn  = 00000000
+Inno_Logo: close ceva clock.
+System_Fork("/sbin/innologo_opt /tmp/innologo_options")
+UCountryLang=USeng
+innologo_opt /tmp/innologo_options
+innologo_opt: InnoTab3S(R)
+innologo_opt: reverse left/right channel in audio mixer
+System_Fork("/sbin/innologo_opt /tmp/innologo_options") returns 0
+Inno_Logo: Parsing String 'offadc=291'...
+Inno_Logo: command line parameter: auto off at ADC value 291
+Inno_Logo: Parsing String 'version=1588ir'...
+Inno_Logo: command line parameter: hardware version = 1588 (Innotab 3S (R))
+Inno_Logo: Parsing String 'revch'...
+Inno_Logo: command line parameter: reverse audio mixer channels
+System_Fork("rm -f /tmp/innologo_options")
+System_F[   18.400000] ##### register_disp_irq_func(): SEQ:5 ARG=1 #####
+ork("rm -f /tmp/innologo_options") returns 0
+Inno_Logo: Set LCD positio[   18.410000] ###### vtech_lcd_ctrl: change lcd_position NORMAL ######
+[   18.410000] ##### disp_irq(): DO FLIP, SEQ:5 ARG=1 #####
+n to NORMAL.
+System_Fork("audiomixer.x -cs -r 48000 &")
+System_Fork("audiomixer.x -cs -r 48000 &") returns 0
+- enabling miexer swap channel
+[   18.470000] I2S = 0x10c424
+- server[   18.480000] Audio: ioctl SNDCTL_DSP_SPEED:
+ format:[   18.480000] Audio: set sampling rate = 48000.
+ sample rate = 48000 Hz
+initializing...
+Inno_Logo: headphone OFF
+Inno_Logo: RTC alarm time second = 0
+System_Fork("devmem 0x9301F038 32 0x0000037F")
+System_Fork("devmem 0x9301F038 32 0x0000037F") returns 0
+InnoLogo Result: 0
+===============================
+=====   Snapshot End     ======
+===============================
+Inno_Logo: going background.
+Bundle title mounted at /dev/sdcarda8 successfully!
++++Turn On ramzswap...
+No /dev/sdcardb
+No /dev/sdcardb1
+Setting up swapspace version 1, size = 67104768 bytes
+UUID=bfdf9a98-ec73-4d2e-bf1e-a3a2d70913bb
+waiting for /dev/ramzswap0 exist...
+[   23.690000] Adding 65528k swap on /dev/sdcarda9.  Priority:150 extents:1 across:65528k SS
+####################################
+2013-06-29 15:07:34
+dev
+vicsiu
+####################################
+starting pid 453, tty '': '/._.'
+[   24.100000] ramzswap: /dev/ramzswap0 initialized: disksize_kb=8192, disktype=0
+[   24.150000] Adding 8184k swap on /dev/ramzswap0.  Priority:100 extents:1 across:8184k SS
+---
++++++++++++++++++++++++++++++++++++++++++++
+++ _Run_Once
++++++++++++++++++++++++++++++++++++++++++++
+SB_LOCATION=eMMC
+SDCARD_PATH is: /vp_mnt/sd
+Install key_driver with config=7 (IT2013W with D-Pad and Enter keys)
+HEADPHONE_VOL_RATIO=80
+[   24.560000] ###watchdog_init###
+[   24.580000] input: gp-keys as /devices/platform/gp-keys/input/input1
+[   24.990000] SPU module: left/right channels swapped
+[   25.140000] [SPEAKER 27]
+[   25.140000] _dmem_init()
+[   25.140000] dac-jack: succeed to allocate memory (1677312) for wifi usb, phy addr=0x05BE4000
+[   25.310000] -+-+-+-+-+-+- kx_check(): g-sensor type = unknown [0x0A]!
+[   25.310000] -+-+-+-+-+-+- g-sensor: model = KXCJ9 (or others)
+[   25.390000] [polling_delay] HAL_BUSY_WAITING Time Out!!
+[   25.400000] i2c-bus: write data ERROR - slave_addr:0x1E clock:300 offset:1 data:0x41
+[   25.410000] -+-+-+-+-+-+- gsensor KXTF9/KXCJ9 probe ok (need_rotate=1 flip=0 postflip=0)
+SDApp_ReadHeader(): App Header Version              : 0x00000010
+SDApp_ReadHeader(): App Header Total Size           : 0x0001B99D
+SDApp_ReadHeader(): App Header Number of Partitions : 0x00000010
+SDApp_ReadHeader(): App Header CheckSum             : 0x00000000
+../VTECH/SDApp.c: SDApp_Initialize() SDApp_ReadHeader OK
+-=-=-=-=-=-=-=-=- SENSOR_TYPE: hi256 -=-=-=-=-=-=-=-=-
+-=-=-=-=-=-=-=-=- LENS_TYPE: 3 -=-=-=-=-=-=-=-=-
+[   25.760000] ModuleInit: csi1 
+[   25.760000] ### CsiKernel_init() sensor=2 config=2 ###
+[   25.940000] ModuleInit: mipi
+[   26.120000] ModuleInit: hi256_mipi! 
+0
+[   26.350000] ###### csi1_ctrl: csi1_ctrl_init() ######
+[   26.370000] ###### csi1_ctrl: csi1_ctrl_init() successful ######
+Already in landscape!
+PID_MOUNT_IF=521
+PID_MOUNT_IFSD_INET_IDLG=523
+Waiting PID_MOUNT_IF(521)...
+PID_CALIBRATE_TOUCH_GSENSOR=524
+vm.oom_dump_tasks = 1
+No SD card!
+[   26.900000] kjournald starting.  Commit interval 5 seconds
+[   26.900000] EXT3 FS on sdcarda11, KEY STATUS: 
+internal journal
+[   26.930000] EXT3-fs: recovery complete.
+[   26.930000] EXT3-fs: mounted filesystem with ordered data mode.
+Mounted /vp_mnt/if
+TouchCalibrate[eMMC]
+GsensorCalibrate[eMMC]
+Waiting PID_MOUNT_IF(521)...
+Waiting PID_CALIBRATE_TOUCH_GSENSOR(524)...
+After wait PID_MOUNT_IF(521)...
+PID_SDMOUNT_IFSD=580
+After wait PID_MOUNT_IF(521)...
+[   28.900000] kjournald starting.  Commit interval 5 seconds
+[   28.910000] EXT3 FS on sdcarda13, internal journal
+[   28.910000] EXT3-fs: recovery complete.
+[   28.940000] EXT3-fs: mounted filesystem with ordered data mode.
+Mounted /var/if_net
+sdmount.sh: Enter /etc/sdmount.sh ACTION=add, mmc_name=sdcarda1, SEQNUM=, vtechBootDev=eMMC
+[   29.100000] kjournald starting.  Commit interval 5 seconds
+[   29.110000] EXT3 FS on sdcarda12, internal journal
+[   29.140000] EXT3-fs: recovery complete.
+[   29.140000] EXT3-fs: mounted filesystem with ordered data mode.
+Mounted /vp_mnt/if_dlg
+Waiting PID_SDMOUNT_IFSD(580)...
+sdcarda1: dosfsck...
+Touch_Calibrate: command line parameter: test mode
+Touch_Calibrate: get touch data ok: 33431 126 -1349878 -216 -20795 19158987 65536
+Touch_Calibrate: test - calibration not necessary
+Touch_Calibrate: command line parameter: test mode
+Gsensor_Calibrate: get g-sensor data ok: 19 6 -11
+Touch_Calibrate: test - calibration not necessary
+dosfsck 3.0.12, 29 Oct 2011, FAT32, LFN
+Touch_Calibrate: command line parameter: disable exit key
+Touch_Calibrate: command line parameter: do not verify
+Touch_Calibrate: command line parameter: auto off at ADC value 291
+Touch_Calibrate: command line parameter: boot mode = SD
+Touch_Calibrate: command line parameter: auto power off 240000ms
+SDApp_ReadHeader(): App Header Version              : 0x00000010
+SDApp_ReadHeader(): App Header Total Size           : 0x0001B99D
+SDApp_ReadHeader(): App Header Number of Partitions : 0x00000010
+SDApp_ReadHeader(): App Header CheckSum             : 0x00000000
+Touch_Calibrate: get touch data ok: 33431 126 -1349878 -216 -20795 19158987 65536
+System_Fork("echo 33431 126 -1349878 -216 -20795 19158987 65536 > /etc/pointercal")
+System_Fork("echo 33431 126 -1349878 -216 -20795 19158987 65536 > /etc/pointercal") returns 0
+Gsensor_Calibrate: command line parameter: disable exit key
+Gsensor_Calibrate: command line parameter: boot mode = SD
+SDApp_ReadHeader(): App Header Version              : 0x00000010
+SDApp_ReadHeader(): App Header Total Size           : 0x0001B99D
+SDApp_ReadHeader(): App Header Number of Partitions : 0x00000010
+SDApp_ReadHeader(): App Header CheckSum             : 0x00000000
+Gsensor_Calibrate: get g-sensor data ok: 19 6 -11
+System_Fork("echo 19 6 -11 > /etc/gsensorcal")
+System_Fork("echo 19 6 -11 > /etc/gsensorcal") returns 0
+After wait PID_CALIBRATE_TOUCH_GSENSOR(524)...
+Waiting PID_MOUNT_IF(521)...
+After wait PID_MOUNT_IF(521)...
+Already in landscape!
+Change t[   30.380000] csi1_ctrl_ioctl(): CSI1_CTRL_SET_DISPLAY_FLIP flip=1
+o orientation landscape
+[   30.400000] gp_csi1_set_display_flip() (sensor not yet registered): csi_display_flip=1
+[   30.400000] ##### register_disp_irq_func(): SEQ:6 ARG=1 #####
+[   30.420000] -+-+-+-+-+-+- set gsensor postflip: 0
+###############################################################################
+Desktop Manager
+###############################################################################
+desktopManager Read_Battery_ADC_List(): read Battery ADC List from string: '464,476,316,324,291,298'.
+desktopManager Read_Battery_ADC_List(): values read = 464 476 316 324 291 298.
+eMMC: read Uniquekey success!
+SystemUpgrade.c: SysUpgrade_Init() ############ READ BACK CHECKING IS ENABLED!!
+partInfo->partNumber = 10
+partInfo->startSector = 0x9199
+partInfo->dstAddress = 0x0
+partInfo->ImageSize = 0x1
+partInfo->partSize = 0x1
+partInfo->partNumber = 11
+partInfo->startSector = 0x919a
+partInfo->dstAddress = 0x0
+partInfo->ImageSize = 0x1
+partInfo->partSize = 0x1
+SystemUpgrade.c: SysUpgrade_Init() SysUpgrade_Init() success!! version1 partition is selected.
+SystemUpgrade.c: SysUpgrade_Init() +++++++++++++++++++++++++++++++++++++++++++++++++++
+SystemUpgrade.c: SysUpgrade_Init() own        : v34
+SystemUpgrade.c: SysUpgrade_Init() loader_1   : v34
+SystemUpgrade.c: SysUpgrade_Init() loader_2   : v0
+SystemUpgrade.c: SysUpgrade_Init() kernel_1   : v34
+SystemUpgrade.c: SysUpgrade_Init() kernel_2   : v0
+SystemUpgrade.c: SysUpgrade_Init() fastboot_1 : v34
+SystemUpgrade.c: SysUpgrade_Init() fastboot_2 : v0
+SystemUpgrade.c: SysUpgrade_Init() system_1   : v34
+SystemUpgrade.c: SysUpgrade_Init() system[   31.630000] [SPEAKER 27]
+_2   : v0
+
+SystemUpgrade.c: SysUpgrade_Abort() Abort!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+desktopManager: signalApp(7)
+desktopManager: signalApp(): bundle_pid=0, title_pid=0, title_loc=-
+===================Launch BUNDLE===================
+phonejack_thread: start
+DMServer_thread: start
+DMS[   31.660000] [SPEAKER 27]
+erver: listen at /var/run/DMServer.socket
+key_thread: start
+[   31.740000] ###### vtech_lcd_ctrl: change lcd_position NORMAL ######
+[   31.740000] ##### disp_irq(): DO FLIP, SEQ:6 ARG=1 #####
+---
++++++++++++++++++++++++++++++++++++++++++++
+++ _Run_Bundle
++++++++++++++++++++++++++++++++++++++++++++
++++ Run Bundle
+/dev/sdcarda1: 81 files, 5217/618813 clusters
+sdcarda1: dosfsck exit 0
+[   32.630000] [SPEAKER 27]
+19700101000019
+Already in landscape!
+>>> appswitch: pop and exec below app, 3 remain in stack.
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "./clock.sh"
+>>> exec_argv[2] = "-s"
+>>> exec_argv[3] = "20130101"
+app launch successfully: pid=669
+wait_processes_terminate(669) -- start
+Desktop Manager: Initilaize OK
+Already in landscape!
+
+at the end-----argv[1]=-s,arg=3
+
+at the end-----argv[2]=20130101,arg=3
+setting Clock. 
+################################################################################
+Game Engine Build Time: May 13 2013 17:07:18
+################################################################################
+/dev/sdcarda1: mounted to /media/sdcarda1
+/vp_mnt/if_sd -> /dev/sdcarda1
+sdcarda1 is mounted as vfat!
+After wait PID_SDMOUNT_IFSD(580)...
+
+ClockSetTime 
+vfork_system("hwclock -w")
+[   37.960000] [arch/arm/mach-gpl32900/rtc/gp_rtc.c:gp_rtcdrv_set_time] :
+[   37.960000] ====>113 0 1 0 0 24
+vfork_system("hwclock -w") returns 0
+================= the last orientation is landscape ===================
+Received terminate message!
+fade in last step *************** mStepAlphaValue = 0
+fade in send message *************** mStepAlphaValue = -16
+Loading Screen Exit....
+high_p:-17 ,low_p:0 , detour:1 , msg:0
+[   40.990000] fuse init (API version 7.13)
+Waiting for device /dev/fuse to up...
+tunedlsd lowspeed
+Waiting for device /dev/fuse to up...
+dlsd entered!
+Waiting for device /dev/fuse to up...
+TP detour'ed!
+CmdServer: listen at /var/run/WifiSetup.CmdServer.socket
+QT->../common/dls_utils.c:PRINT_TRACE_AT_SEGFAULT:518: crit_err_hdlr=0x30308
+QT->../common/dls_utils.c:dls_parse_cmdline:296: db_path=/var/if_net/dlsd.db
+QT->../common/dls_utils.c:dls_parse_cmdline:306: dbt=/system/lib/vtech/dlsd.db-template
+QT->../common/dls_utils.c:dls_parse_cmdline:337: *db=/var/if_net/dlsd.db, *log=
+Waiting for device /dev/fuse to up...
+Waiting for device /dev/fuse to up...
+Waiting for device /dev/fuse to up...
+Waiting for device /dev/fuse to up...
+Waiting for device /dev/fuse to up...
+Waiting for device /dev/fuse to up...
+Device /dev/fuse found
+Device /dev/aes found
+Success: Set up /var/run/enc for encryption content in /vp_mnt
+Device /var/run/enc/enc.config found
+Encryption setup successful
+Waiting PID_MOUNT_IFSD_INET_IDLG(523)...
+After wait PID_MOUNT_IFSD_INET_IDLG(523)...
+Download service: paused
+dls_cli -W -1 -T 1 -F 8 -U 10 -L 8 -V 10
+vfork_system("hwclock -w")
+[   68.130000] [arch/arm/mach-gpl32900/rtc/gp_rtc.c:gp_rtcdrv_set_time] :
+[   68.140000] ====>113 0 1 0 0 54
+vfork_system("hwclock -w") returns 0
+vfork_system("hwclock -w")
+[   70.430000] [arch/arm/mach-gpl32900/rtc/gp_rtc.c:gp_rtcdrv_set_time] :
+[   70.430000] ====>113 0 1 0 0 0
+vfork_system("hwclock -w") returns 0
+fade out last step *************** mStepAlphaValue = 64
+fade out send message *************** mStepAlphaValue = 80
+Change t[   70.940000] csi1_ctrl_ioctl(): CSI1_CTRL_SET_DISPLAY_FLIP flip=0
+o orient[   70.950000] gp_csi1_set_display_flip() (sensor not yet registered): csi_display_flip=0
+ation po[   70.950000] ##### register_disp_irq_func(): SEQ:7 ARG=2 #####
+rtrait
+[   70.960000] -+-+-+-+-+-+- set gsensor postflip: 1
+================= set the last orientation as portrait ===================
+wait_processes_terminate(669) -- finish
+sighandl[   71.030000] [SPEAKER 27]
+er_temp_set_shutter_sfx_vol(58)
+[   71.160000] ###### vtech_lcd_ctrl: change lcd_position FLIP ######
+[   71.160000] ##### disp_irq(): DO FLIP, SEQ:7 ARG=2 #####
+>>> appswitch: pop and exec below app, 2 remain in stack.
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "./LoginName.sh"
+app launch successfully: pid=778
+wait_processes_terminate(778) -- start
+Change t[   71.390000] csi1_ctrl_ioctl(): CSI1_CTRL_SET_DISPLAY_FLIP flip=1
+o orient[   71.390000] gp_csi1_set_display_flip() (sensor not yet registered): csi_display_flip=1
+[   71.400000] ##### register_disp_irq_func(): SEQ:8 ARG=1 #####
+
+[   71.410000] -+-+-+-+-+-+- set gsensor postflip: 0
+[   71.460000] ###### vtech_lcd_ctrl: change lcd_position NORMAL ######
+[   71.460000] ##### disp_irq(): DO FLIP, SEQ:8 ARG=1 #####
+Register Parser <Quick Time File Format>
+Register Parser <.MP3 File Parser>
+Register Parser <.WAV File Parser>
+Register Parser <AMR/AMR-WB File Parser>
+Register Parser <.APE File Parser>
+Register Parser <.AAC File Parser>
+
+
+CHUNK MEM INITIALIZE
+
+desktopManager: enable_auto_power_off(1)
+################################################################################
+Game Engine Build Time: Jun 21 2013 11:46:36
+################################################################################
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0101/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0101/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0202/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0202/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0303/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0303/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0400/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0400/head_icon.jpg" 0
+---Login create OK!---
+Received terminate message!
+Already in landscape!
+Loading Screen Exit....
+vfork_system("userman select 14ea0101
+")
+JID=
+LLN_CHILDID=
+LLN_PARENT=
+vfork_system("userman select 14ea0101
+") returns 0
+
+ the 14ea0101 user login ..
+===login clean up .... ====
+Already in landscape!
+photosize.set already exist
+...dls cmd sh, OK!
+vfork_system("rm -rf /tmp/bstalk_check.xml")
+vfork_system("rm -rf /tmp/bstalk_check.xml") returns 0
+Remainder  US version 0605
+vtech_getEclk = 0
+iDayFromGift = 999
+iDayFromGame = -775
+iCurrTime = 1356998413
+iGiftTime = 0
+[   83.250000] [SPEAKER 27]
+iPlayTime = 1423983261
+wait_processes_terminate(778) -- finish
+sighandler_temp_set_shutter_sfx_vol(58)
+>>> appswitch: pop and exec below app, 1 remain in stack.
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "/system/lib/vtech/wait_boot_done"
+app launch successfully: pid=832
+wait_processes_terminate(832) -- start
+wait_pro[   83.460000] [SPEAKER 27]
+cesses_terminate(832) -- finish
+sighandler_temp_set_shutter_sfx_vol(58)
+>>> appswitch: pop and exec below app, 0 remain in stack.
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "./_Run_prepare_files"
+>>> exec_argv[2] = ""
+app launch successfully: pid=833
+wait_processes_terminate(833) -- start
+desktopManager: enable_auto_power_off(1)
+PartInfo_net.db already exist in IF
+Wifi_DB_net.db already exist in IF
+Wifi_DB_net.db already exist in IF
+Inn[   83.970000] [SPEAKER 27]
+opad.db already exist in IF
+photo.db already exist in IF
+VideoInfo.db already exist in IF
+wait_processes_terminate(833) -- finish
+sighandler_temp_set_shutter_sfx_vol(58)
+>>> appswitch: stack is empty, launch menu_app!
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "./menu.sh"
+app launch successfully: pid=844
+wait_processes_terminate(844) -- start
+Innopad_in is OK.
+YES
+QT->dls_api.c:dlsa_get_dlist:972: row_cnt=0
+...cnt=0
+...dls scan end.
+...dls purge end.
+db file error.
+./MainMenuStage.x 0
+rm: can't remove '/vp_mnt/if/LLN_REGISTERED': No such file or directory
+desktopManager: enable_auto_power_off(1)
+Register Parser <Quick Time File Format>
+Register Parser <.MP3 File Parser>
+Register Parser <.WAV File Parser>
+Register Parser <AMR/AMR-WB File Parser>
+Register Parser <.APE File Parser>
+Register Parser <.AAC File Parser>
+################################################################################
+Game Engine Build Time: May  3 2013 17:26:20
+################################################################################
+vtech_crypt_select("", "/vp_mnt/if/user.current/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0101/head_icon.jpg" 0
+QT->dls_api.c:dlsa_get_dlist:972: row_cnt=0
+...close dls handle..1218.
+Received terminate message!
+Already in landscape!
+Loading Screen Exit....
+...scan photo: if_sd.
+...scan photo end.
+
+
