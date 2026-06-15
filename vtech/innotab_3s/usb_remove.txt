@@ -1,0 +1,71 @@
+detected USB remove...
+Close_USB_Device
+[  169.380000] [do_scsi_command][3626]---WHY?[18][1]
+[  169.390000] SW Disconnect
+[  169.390000] [usb_slave_get_vbus_config][2077]->GPIO
+[  169.400000] pin already requested by unregister_isr!
+[  169.400000] Disable USB1 CLK
+[  169.410000] Trying to free nonexistent resource <0000000093006000-0000000093006fff>
+[  169.470000] Host is working!
+[  169.470000] Disable USB1 CLK
+[  169.470000] ###wake up ra2k ###
+rmmod: remove 'gp_i2c_bus_module': Resource temporarily unavailable
+[  169.740000] usbcore: deregistering device driver usb
+[  169.750000] usbcore: deregistering interface driver usbfs
+[  169.770000] usbcore: deregistering interface driver hub
+rmmod: remove 'gp_i2c_bus_module': Resource temporarily unavailable
+sdmount.sh: Enter /etc/sdmount.sh ACTION=usb_disconnected, mmc_name=, SEQNUM=, vtechBootDev=eMMC
+sdmount.sh: Enter /etc/sdmount.sh ACTION=remove, mmc_name=sdcardb, SEQNUM=, vtechBootDev=eMMC
+sdmount.sh: Enter /etc/sdmount.sh ACTION=add, mmc_name=sdcarda1, SEQNUM=, vtechBootDev=eMMC
+sdcarda1: dosfsck...
+dosfsck 3.0.12, 29 Oct 2011, FAT32, LFN
+/dev/sdcarda1: 81 files, 5217/618813 clusters
+sdcarda1: dosfsck exit 0
+/dev/sdcarda1: mounted to /media/sdcarda1
+/vp_mnt/if_sd -> /dev/sdcarda1
+sdcarda1 is mounted as vfat!
+sdmount.sh: Enter /etc/sdmount.sh ACTION=add, mmc_name=sdcardb, SEQNUM=, vtechBootDev=eMMC
+/dev/sdcardb does not exist!
+desktopManager: signalApp(5)
+desktopManager: signalApp(): bundle_pid=0, title_pid=0, title_loc=-
+===================REASON_USB_UNPLUG===================
+Send SIGTERM to USB Connect (pid=910)...
+8000Hz 16-bit 1-ch: ===================Launch BUNDLE again===================
+---
++++++++++++++++++++++++++++++++++++++++++++
+++ _Run_Bundle
++++++++++++++++++++++++++++++++++++++++++++
++++ Run Bundle
+20130101000209
+Already in landscape!
+>>> appswitch: pop and exec below app, 2 remain in stack.
+>>> exec_argv[0] = "++NoHome"
+>>> exec_argv[1] = "./LoginName.sh"
+app launch successfully: pid=1060
+wait_processes_terminate(1060) -- start
+Already in landscape!
+Register Parser <Quick Time File Format>
+Register Parser <.MP3 File Parser>
+Register Parser <.WAV File Parser>
+Register Parser <AMR/AMR-WB File Parser>
+Register Parser <.APE File Parser>
+Register Parser <.AAC File Parser>
+
+
+CHUNK MEM INITIALIZE
+
+################################################################################
+Game Engine Build Time: Jun 21 2013 11:46:36
+################################################################################
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0101/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0101/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0202/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0202/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0303/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0303/head_icon.jpg" 0
+vtech_crypt_select("", "/vp_mnt/if/user.14ea0400/head_icon.jpg", VCRYPT_METHOD_DEFAULT, 0)
+Output: "/vp_mnt/if/user.14ea0400/head_icon.jpg" 0
+---Login create OK!---
+Received terminate message!
+Already in landscape!
+Loading Screen Exit....
