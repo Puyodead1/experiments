@@ -1,0 +1,84 @@
+detected USB insert...
+desktopManager: signalApp(2)
+desktopManager: signalApp(): bundle_pid=669, title_pid=0, title_loc=-
+===================REASON_USB_PLUG===================
+Send SIGTERM to Bundle (pid=669,pgid=669)...
+>>> appswitch: received SIGTERM (15)
+>>> appswitch: send SIGTERM to process group 839...
+>>> appswitch: exit by SIGTERM
+received signal: 15
+wait_pro[   94.760000] [SPEAKER 27]
+cesses_terminate(839) -- finish
+sighandler_temp_set_shutter_sfx_vol(58)
+===================Launch USB Connect App===================
+---
++++++++++++++++++++++++++++++++++++++++++++
+++ _Run_USB_Connect
++++++++++++++++++++++++++++++++++++++++++++
+PartInfo_net.db already exist in IF
+Wifi_DB_net.db already exist in IF
+Wifi_DB_net.db already exist in IF
+Innopad.db already exist in IF
+photo.db already exist in IF
+VideoInfo.db already exist in IF
+Already in landscape!
+8000Hz 16-bit 1-ch: desktopManager: Request to hide WifiSetup UI...
+WifiSetup current priority:0
+desktopManager: Wi[   96.300000] [SPEAKER 27]
+fiSetup UI hides
+WIFI: OFF...
+Open_USB_Device
+[   96.990000] gp_usb: Unknown symbol usb_device_connect_state_get
+[   97.000000] gp_usb: Unknown symbol usb_test_typeSetting
+[   97.470000] usbcore: registered new interface driver usbfs
+[   97.480000] usbcore: registered new interface driver hub
+[   97.480000] usbcore: registered new device driver usb
+[   97.660000] Reset Setting
+[   97.660000] Enable PHY CLK
+[   97.680000] Resume PHY
+[   97.700000] Enable SYS_A
+[   97.700000] Enable USB0 CLK
+[   97.700000] Reset Config
+[   97.700000] [gp_usb_en]Enable Host/Power
+[   97.720000] Voltage Up-PHY[0]level[1]
+[   97.720000] Voltage Up-PHY[1]level[1]
+sdmount.sh: Enter /etc/sdmount.sh ACTION=usb_connected, mmc_name=, SEQNUM=, vtechBootDev=eMMC
+desktopManager: enable_auto_power_off(1)
+wait until /dev/usb_device is up...
+/dev/usb_device exists!
+eMMC: read Uniquekey success!
+Get Unique Key Success
+#### USB START #####
+####USB PLUG IN#####
+[   99.580000] g_spmp_storage: Unknown symbol usb_gadget_register_driver
+[   99.600000] g_spmp_storage: Unknown symbol usb_gadget_unregister_driver
+[   99.770000] No of luns=4
+[   99.770000] Generic Storage Device gadget-lun0: ro=0, file: /dev/null
+[   99.790000] Generic Storage Device gadget-lun1: ro=0, file: /dev/sdcarda1
+[   99.790000] Generic Storage Device gadget-lun3: ro=0, file: /tmp/BuiltinCDROM.iso
+[   99.810000] [usb_slave_get_vbus_config][2077]->GPIO
+[   99.810000] Resume PHY
+[   99.810000] Enable SYS_A
+[   99.830000] Enable USB1 CLK
+[   99.830000] [usb_slave_get_vbus_config][2077]->GPIO
+[   99.830000] VBUS[1]
+[   99.850000] pin already requested by register_isr!
+[   99.850000] SW Connect
+[   99.850000] INTERRUPT MODE
+[  100.200000] Generic Storage Device gadget: high speed config #1
+[  100.310000] CBW[1]v[1]r[0]mr[1]sm c[0]sm[0]
+[  100.310000] CBW Fail
+[  101.280000] [do_scsi_command][3606] Unknown COMMAND ---
+[  101.280000] 
+[  101.290000] [do_scsi_command][3606] Unknown COMMAND ---
+[  101.290000] 
+[  101.310000] [do_scsi_command][3606] Unknown COMMAND ---
+[  101.310000] 
+[  101.320000] [do_scsi_command][3606] Unknown COMMAND ---
+[  101.320000] 
+[  101.330000] [do_read][1315] curlun->num_sectors=2097152
+[  101.330000] ###out of range###
+[  101.330000] out of range
+[  101.760000] CBW[31]
+
+
