@@ -34,6 +34,7 @@ class FileEntry:
             f"  LBA: {self.lba}\n"
             f"  Size: {self.size}\n"
             f"  Name: {self.name}"
+            f"  Offset: {self.lba * 2048:#x}"
         )
 
     @staticmethod

@@ -1,0 +1,41 @@
+Patch OTA (only for 1695)
+-------------------------
+
+[US]
+    (M1, M2, M3, M4, M5) --patch.ota--> MxP
+    MxP --full.ota--> M6
+    M6 --full.ota--> M7...
+
+[UK]
+    (M1, M2, M3, M4) --patch.ota--> MxP
+    MxP --full.ota--> M5
+    M5 --full.ota--> M6...
+
+[FR]
+    (M1, M2) --patch.ota--> MxP
+    MxP --full.ota--> M3
+    M3 --full.ota--> M4...
+
+[GE]
+    M1: no production
+    M2 --full.ota--> M3
+
+[SP]
+    M1 --full.ota--> M2
+
+
+********************************************************
+
+patch.ota:
+    update.apk (bug fix)
+    firmware.apk (for new parameter sFirmwareVersion)
+    registration.apk (for new parameter sFirmwareVersion)
+    wsss.apk
+    MAINUNIT_VER
+
+LL web service call:
+    New parameter to pass console firmware version (e.g. 48.XXXXX) at some functions.
+
+    Function getConsoleSystemFiles (server side) will be modified as following.
+    a) For US/UK/FR/CAeng/CAfre, if no sFirmwareVersion parameter is passed, returns patch-ota URL, otherwise returns full-ota URL.
+    b) For GE/SP, always return full-ota URL.
